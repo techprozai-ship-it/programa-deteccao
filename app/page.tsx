@@ -120,6 +120,86 @@ export default function Home() {
         )}
 
         {!isSearching && results.length > 0 && <ResultsList results={results} searchedName={searchedName} />}
+
+        {/* APOL API Links Section */}
+        <div className="mt-24 pt-16 border-t border-border/50 space-y-8">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              🏛️ APOL Webservices
+            </h2>
+            <p className="text-muted-foreground">
+              Acesso aos endpoints de Marcas, Patentes e Processos
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <a
+              href="/api/apol/marcas/docs"
+              className="p-6 rounded-xl border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-transparent hover:border-primary/60 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 group"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition">
+                  🏷️
+                </div>
+                <h3 className="text-lg font-bold">Marcas</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                GET, POST, PUT, DELETE com autenticação Basic Auth
+              </p>
+              <div className="text-xs text-primary font-mono mt-3 group-hover:underline">
+                /api/apol/marcas →
+              </div>
+            </a>
+
+            <a
+              href="/api/apol/marcas/docs"
+              className="p-6 rounded-xl border-2 border-secondary/30 bg-gradient-to-br from-secondary/10 to-transparent hover:border-secondary/60 hover:shadow-lg hover:shadow-secondary/20 transition-all duration-300 group"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition">
+                  🔬
+                </div>
+                <h3 className="text-lg font-bold">Patentes (Em breve)</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Gerenciamento de patentes e inovações registradas
+              </p>
+              <div className="text-xs text-secondary font-mono mt-3 group-hover:underline">
+                /api/apol/patentes →
+              </div>
+            </a>
+
+            <a
+              href="/api/apol/marcas/docs"
+              className="p-6 rounded-xl border-2 border-accent/30 bg-gradient-to-br from-accent/10 to-transparent hover:border-accent/60 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 group"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition">
+                  ⚖️
+                </div>
+                <h3 className="text-lg font-bold">Providências (Em breve)</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Gerenciamento de ações judiciais e providências
+              </p>
+              <div className="text-xs text-accent font-mono mt-3 group-hover:underline">
+                /api/apol/providencias →
+              </div>
+            </a>
+          </div>
+
+          <div className="p-6 rounded-xl bg-secondary/5 border-2 border-secondary/20 text-center space-y-3">
+            <p className="text-sm text-muted-foreground">
+              <strong>Autenticação:</strong> Basic Auth (admin:apol2024)
+            </p>
+            <a
+              href="/api/apol/marcas/docs"
+              className="inline-block px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-medium hover:shadow-lg transition"
+            >
+              Ver Documentação Completa
+            </a>
+          </div>
+        </div>
       </main>
     </div>
   )
