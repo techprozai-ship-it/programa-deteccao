@@ -90,9 +90,9 @@ class MarcaDatabase {
   }
 
   searchMarcas(criteria: {
-    marca?: string;
-    titular?: string;
-    estado?: string;
+    marca?: string | undefined;
+    titular?: string | undefined;
+    estado?: string | undefined;
     limit?: number;
     page?: number;
   }): Marca[] {
@@ -101,19 +101,20 @@ class MarcaDatabase {
 
     let results = Array.from(this.marcas.values());
 
-    if (criteria.marca) {
+    // Aplicar filtros apenas se foram fornecidos (não null/undefined)
+    if (criteria.marca && criteria.marca.trim()) {
       results = results.filter((m) =>
         m.marca.toLowerCase().includes(criteria.marca!.toLowerCase())
       );
     }
 
-    if (criteria.estado) {
+    if (criteria.estado && criteria.estado.trim()) {
       results = results.filter(
         (m) => m.estado.toLowerCase() === criteria.estado!.toLowerCase()
       );
     }
 
-    if (criteria.titular) {
+    if (criteria.titular && criteria.titular.trim()) {
       results = results.filter((m) =>
         m.envolvidos.some((e) =>
           e.nome.toLowerCase().includes(criteria.titular!.toLowerCase())
