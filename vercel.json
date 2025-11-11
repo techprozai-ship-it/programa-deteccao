@@ -1,16 +1,4 @@
 {
-  "projectSettings": {
-    "rootDirectory": ".",
-    "outputDirectory": ".next"
-  },
-  "buildCommand": "pnpm run build",
-  "devCommand": "pnpm run dev",
-  "installCommand": "pnpm install",
   "framework": "nextjs",
-  "nodeVersion": "18.x",
-  "regions": ["sfo1"],
-  "env": {
-    "COMPANY_SEARCH_API_KEY": "@company-search-api-key",
-    "OPENCORPORATES_API_KEY": "@opencorporates-api-key"
-  }
+  "nodeVersion": "20.x"
 }
